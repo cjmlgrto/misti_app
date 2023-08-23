@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app_template/constants.dart';
 
 class StatusScreen extends StatelessWidget {
   final String text;
@@ -8,6 +9,6 @@ class StatusScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white, body: Center(child: Text(text)));
+        backgroundColor: AppColors.background, body: Center(child: Text(text)));
   }
 }

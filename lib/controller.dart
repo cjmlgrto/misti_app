@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:app_template/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue/flutter_blue.dart';
 
@@ -12,7 +13,7 @@ class BluetoothController extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      color: Colors.black,
+      color: AppColors.background,
       home: StreamBuilder<BluetoothState>(
           stream: FlutterBlue.instance.state,
           initialData: BluetoothState.unknown,
