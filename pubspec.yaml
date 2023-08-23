@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_blue: ^0.8.0
+  permission_handler: ^10.4.3
 
 dev_dependencies:
   flutter_test:
