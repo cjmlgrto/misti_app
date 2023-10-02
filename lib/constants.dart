@@ -119,3 +119,16 @@ class ButtonStyles {
       shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))));
 }
+
+class Strings {
+  static const String deviceHelpTitle = "Device Troubleshooting";
+  static const String deviceHelpText = """ 
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+  """;
+
+  static const String usageGuideTitle = "Usage Guide";
+
+  static const String gettingStartedGuideTitle = "Getting Started";
+}

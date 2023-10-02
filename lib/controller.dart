@@ -22,7 +22,7 @@ class BluetoothController extends StatelessWidget {
             if (state == BluetoothAdapterState.on) {
               return const DeviceScanner();
             }
-            return const StatusScreen(text: "No Device Connected");
+            return const StatusScreen();
           }),
     );
   }
@@ -52,7 +52,7 @@ class DeviceScanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     scanAndConnect(context);
-    return const StatusScreen(text: "Connecting...");
+    return const StatusScreen();
   }
 }
 
@@ -129,6 +129,6 @@ class _DeviceScreenState extends State<DeviceScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return StatusScreen(text: "exampleCharacteristic: $exampleCharacteristic");
+    return StatusScreen();
   }
 }
