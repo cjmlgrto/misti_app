@@ -26,7 +26,7 @@ class Controls extends StatelessWidget {
                     padding: const MaterialStatePropertyAll<EdgeInsets>(
                         EdgeInsets.all(24.0)),
                     backgroundColor: const MaterialStatePropertyAll<Color>(
-                        AppColors.surfaceSecondary)),
+                        AppColors.surfacePrimary)),
                 child: const Text("Dispense")),
           ),
         ),
@@ -42,7 +42,7 @@ class Controls extends StatelessWidget {
                     padding: const MaterialStatePropertyAll<EdgeInsets>(
                         EdgeInsets.all(24.0)),
                     backgroundColor: const MaterialStatePropertyAll<Color>(
-                        AppColors.surfacePrimary)),
+                        AppColors.surfaceSecondary)),
                 child: const Text("Reset")),
           ),
         ),
