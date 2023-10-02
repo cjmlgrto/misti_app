@@ -7,3 +7,5 @@ class Device {
 }
 
 enum DeviceState { connected, connecting, disconnected }
+
+enum UsageState { none, min, mid, max }

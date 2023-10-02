@@ -89,6 +89,20 @@ class ButtonStyles {
       shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.0))));
 
+  static ButtonStyle buttonMiniSecondary = ButtonStyle(
+      textStyle: const MaterialStatePropertyAll<TextStyle>(TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w600,
+          letterSpacing: -0.4,
+          inherit: false)),
+      foregroundColor:
+          const MaterialStatePropertyAll<Color>(AppColors.accentSecondary),
+      backgroundColor:
+          const MaterialStatePropertyAll<Color>(AppColors.buttonBackground),
+      shadowColor: const MaterialStatePropertyAll<Color>(Colors.transparent),
+      shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(48.0))));
+
   static ButtonStyle buttonTertiary = ButtonStyle(
       textStyle: const MaterialStatePropertyAll<TextStyle>(TextStyle(
           fontSize: 17,
