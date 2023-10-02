@@ -19,9 +19,9 @@ class AppColors {
 class TextStyles {
   static const TextStyle title = TextStyle(
       fontSize: 34,
-      fontWeight: FontWeight.w800,
+      fontWeight: FontWeight.w700,
       color: AppColors.label,
-      letterSpacing: -1);
+      letterSpacing: -1.4);
 
   static const TextStyle subtitle = TextStyle(
       fontSize: 17,
