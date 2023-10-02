@@ -1,3 +1,4 @@
+import 'package:app_template/model.dart';
 import 'package:app_template/widgets/status.dart';
 import 'package:flutter/material.dart';
 import 'package:app_template/constants.dart';
@@ -27,9 +28,20 @@ class StatusScreen extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Padding(
-                        padding: const EdgeInsets.only(bottom: 32),
+                        padding: const EdgeInsets.only(bottom: 16),
                         child: DeviceStatus(
-                          isConnected: false,
+                          status: DeviceState.disconnected,
+                          batteryLevel: 0,
+                          onConnectPressed: onConnectPressed,
+                          onHelpPressed: onHelpPressed,
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 16),
+                        child: DeviceStatus(
+                          status: DeviceState.connecting,
                           batteryLevel: 0,
                           onConnectPressed: onConnectPressed,
                           onHelpPressed: onHelpPressed,
@@ -38,7 +50,7 @@ class StatusScreen extends StatelessWidget {
                     ),
                     Expanded(
                       child: DeviceStatus(
-                        isConnected: true,
+                        status: DeviceState.connected,
                         batteryLevel: 90,
                         onConnectPressed: onConnectPressed,
                         onHelpPressed: onHelpPressed,

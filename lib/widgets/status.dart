@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:app_template/constants.dart';
+import 'package:app_template/model.dart';
 
 class DeviceStatus extends StatelessWidget {
-  final bool isConnected;
   final int batteryLevel;
+  final DeviceState status;
 
   final void Function() onConnectPressed;
   final void Function() onHelpPressed;
 
   const DeviceStatus(
       {super.key,
-      required this.isConnected,
+      required this.status,
       required this.batteryLevel,
       required this.onConnectPressed,
       required this.onHelpPressed});
@@ -135,7 +136,11 @@ class DeviceStatus extends StatelessWidget {
             Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: titleLockup()),
-            (isConnected ? batteryLockup() : actionLockup())
+            (switch (status) {
+              DeviceState.connected => batteryLockup(),
+              DeviceState.connecting => emptyLockup(),
+              DeviceState.disconnected => actionLockup(),
+            })
           ],
         ),
       ),
