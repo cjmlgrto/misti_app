@@ -19,9 +19,9 @@ class AppColors {
 class TextStyles {
   static const TextStyle title = TextStyle(
       fontSize: 34,
-      fontWeight: FontWeight.w700,
+      fontWeight: FontWeight.w800,
       color: AppColors.label,
-      letterSpacing: -0.4);
+      letterSpacing: -1);
 
   static const TextStyle subtitle = TextStyle(
       fontSize: 17,
@@ -55,9 +55,9 @@ class ButtonStyles {
           const MaterialStatePropertyAll<Color>(AppColors.buttonBackground),
       fixedSize: const MaterialStatePropertyAll<Size?>(Size.fromWidth(160)),
       shadowColor: const MaterialStatePropertyAll<Color>(Colors.transparent),
-      padding: const MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.all(8.0)),
+      padding: const MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.all(16.0)),
       shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
-          RoundedRectangleBorder(borderRadius: BorderRadius.circular(32.0))));
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))));
 
   static ButtonStyle buttonSecondary = ButtonStyle(
       textStyle: const MaterialStatePropertyAll<TextStyle>(TextStyle(
