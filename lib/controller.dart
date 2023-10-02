@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:app_template/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_blue/flutter_blue.dart';
+import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 import 'package:app_template/view.dart';
 import 'package:app_template/model.dart';
@@ -14,12 +14,12 @@ class BluetoothController extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       color: AppColors.background,
-      home: StreamBuilder<BluetoothState>(
-          stream: FlutterBlue.instance.state,
-          initialData: BluetoothState.unknown,
+      home: StreamBuilder<BluetoothAdapterState>(
+          stream: FlutterBluePlus.adapterState,
+          initialData: BluetoothAdapterState.unknown,
           builder: (c, snapshot) {
             final state = snapshot.data;
-            if (state == BluetoothState.on) {
+            if (state == BluetoothAdapterState.on) {
               return const DeviceScanner();
             }
             return const StatusScreen(text: "No Device Connected");
@@ -33,24 +33,25 @@ class BluetoothController extends StatelessWidget {
 class DeviceScanner extends StatelessWidget {
   const DeviceScanner({Key? key}) : super(key: key);
 
-  @override
-  Widget build(BuildContext context) {
-    FlutterBlue.instance.startScan(timeout: const Duration(seconds: 4));
-    FlutterBlue.instance.scanResults.listen((results) {
-      for (ScanResult r in results) {
-        if (r.device.name == Device.name) {
-          FlutterBlue.instance.stopScan();
-          r.device.connect();
+  void scanAndConnect(BuildContext context) async {
+    await FlutterBluePlus.startScan();
+    FlutterBluePlus.scanResults.listen((results) {
+      for (ScanResult result in results) {
+        if (result.device.platformName == Device.name) {
+          FlutterBluePlus.stopScan();
+          result.device.connect();
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => DeviceScreen(device: r.device)));
+                  builder: (context) => DeviceScreen(device: result.device)));
         }
       }
     });
+  }
 
-    FlutterBlue.instance.stopScan();
-
+  @override
+  Widget build(BuildContext context) {
+    scanAndConnect(context);
     return const StatusScreen(text: "Connecting...");
   }
 }
