@@ -4,23 +4,32 @@ import 'package:app_template/constants.dart';
 class DeviceStatus extends StatelessWidget {
   final bool isConnected;
   final int batteryLevel;
+
   final void Function() onConnectPressed;
+  final void Function() onHelpPressed;
 
   const DeviceStatus(
       {super.key,
       required this.isConnected,
       required this.batteryLevel,
-      required this.onConnectPressed});
+      required this.onConnectPressed,
+      required this.onHelpPressed});
 
   Column titleLockup() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Padding(
-          padding: const EdgeInsets.only(bottom: 4),
-          child: Text("Device Status",
-              style:
-                  TextStyles.subtitle.copyWith(color: AppColors.accentPrimary)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text("Device Status",
+                style: TextStyles.subtitle
+                    .copyWith(color: AppColors.accentPrimary)),
+            ElevatedButton(
+                onPressed: onHelpPressed,
+                style: ButtonStyles.buttonMiniPrimary,
+                child: const Text("Help"))
+          ],
         ),
         const Text("Misti Mask", style: TextStyles.title)
       ],
@@ -118,7 +127,7 @@ class DeviceStatus extends StatelessWidget {
           color: AppColors.surfacePrimary,
           borderRadius: BorderRadius.all(Radius.circular(16))),
       child: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,

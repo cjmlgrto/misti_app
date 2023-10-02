@@ -7,7 +7,13 @@ class StatusScreen extends StatelessWidget {
 
   const StatusScreen({super.key, required this.text});
 
-  void onConnectPressed() {}
+  void onConnectPressed() {
+    print("Connect Pressed");
+  }
+
+  void onHelpPressed() {
+    print("Help Pressed");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,16 +29,20 @@ class StatusScreen extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(bottom: 32),
                         child: DeviceStatus(
-                            isConnected: false,
-                            batteryLevel: 0,
-                            onConnectPressed: onConnectPressed),
+                          isConnected: false,
+                          batteryLevel: 0,
+                          onConnectPressed: onConnectPressed,
+                          onHelpPressed: onHelpPressed,
+                        ),
                       ),
                     ),
                     Expanded(
                       child: DeviceStatus(
-                          isConnected: true,
-                          batteryLevel: 90,
-                          onConnectPressed: onConnectPressed),
+                        isConnected: true,
+                        batteryLevel: 90,
+                        onConnectPressed: onConnectPressed,
+                        onHelpPressed: onHelpPressed,
+                      ),
                     )
                   ])),
         ));
