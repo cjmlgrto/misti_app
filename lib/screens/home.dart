@@ -1,4 +1,4 @@
-import 'package:app_template/help.dart';
+import 'package:app_template/screens/help.dart';
 import 'package:app_template/model.dart';
 import 'package:app_template/widgets/controls.dart';
 import 'package:app_template/widgets/status.dart';
@@ -6,16 +6,23 @@ import 'package:app_template/widgets/usage.dart';
 import 'package:flutter/material.dart';
 import 'package:app_template/constants.dart';
 
-class StatusScreen extends StatefulWidget {
-  const StatusScreen({Key? key}) : super(key: key);
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
-  State<StatusScreen> createState() => _StatusScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _StatusScreenState extends State<StatusScreen> {
+class _HomeScreenState extends State<HomeScreen> {
+  DeviceState deviceState = DeviceState.off;
+  UsageState usageState = UsageState.none;
+  int batteryLevel = 0;
+
   void onConnectPressed() {
-    print("Connect Pressed");
+    setState(() {
+      batteryLevel = 100;
+      deviceState = DeviceState.connected;
+    });
   }
 
   void onHelpPressed() {
@@ -63,36 +70,30 @@ class _StatusScreenState extends State<StatusScreen> {
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Expanded(
-                        child: Padding(
-                      padding: const EdgeInsets.only(bottom: 16),
-                      child: UsageStatus(
-                          usage: UsageState.max, onHelpPressed: onGuidePressed),
-                    )),
+                    if (deviceState == DeviceState.connected)
+                      Expanded(
+                          child: UsageStatus(
+                              usage: usageState,
+                              onHelpPressed: onGuidePressed)),
                     Expanded(
                       child: DeviceStatus(
-                        status: DeviceState.connected,
-                        batteryLevel: 90,
+                        status: deviceState,
+                        batteryLevel: batteryLevel,
                         onConnectPressed: onConnectPressed,
                         onHelpPressed: onHelpPressed,
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16),
-                      child: Controls(
+                    if (deviceState == DeviceState.connected)
+                      Controls(
                           onDispensePressed: onDispensePressed,
                           onResetPressed: onResetPressed),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 16),
-                      child: Container(
-                        width: double.infinity,
-                        color: Colors.transparent,
-                        child: ElevatedButton(
-                            onPressed: onStarterGuidePressed,
-                            style: ButtonStyles.buttonTertiary,
-                            child: const Text("Getting Started Guide")),
-                      ),
+                    Container(
+                      width: double.infinity,
+                      color: Colors.transparent,
+                      child: ElevatedButton(
+                          onPressed: onStarterGuidePressed,
+                          style: ButtonStyles.buttonTertiary,
+                          child: const Text("Getting Started Guide")),
                     )
                   ])),
         ));

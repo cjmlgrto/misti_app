@@ -12,41 +12,44 @@ class Controls extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(right: 8),
-            child: ElevatedButton(
-                onPressed: onDispensePressed,
-                style: ButtonStyles.buttonPrimary.copyWith(
-                    shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0))),
-                    padding: const MaterialStatePropertyAll<EdgeInsets>(
-                        EdgeInsets.all(24.0)),
-                    backgroundColor: const MaterialStatePropertyAll<Color>(
-                        AppColors.surfacePrimary)),
-                child: const Text("Dispense")),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Row(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(right: 8),
+              child: ElevatedButton(
+                  onPressed: onDispensePressed,
+                  style: ButtonStyles.buttonPrimary.copyWith(
+                      shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.0))),
+                      padding: const MaterialStatePropertyAll<EdgeInsets>(
+                          EdgeInsets.all(24.0)),
+                      backgroundColor: const MaterialStatePropertyAll<Color>(
+                          AppColors.surfacePrimary)),
+                  child: const Text("Dispense")),
+            ),
           ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 8),
-            child: ElevatedButton(
-                onPressed: onResetPressed,
-                style: ButtonStyles.buttonSecondary.copyWith(
-                    shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16.0))),
-                    padding: const MaterialStatePropertyAll<EdgeInsets>(
-                        EdgeInsets.all(24.0)),
-                    backgroundColor: const MaterialStatePropertyAll<Color>(
-                        AppColors.surfaceSecondary)),
-                child: const Text("Reset")),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8),
+              child: ElevatedButton(
+                  onPressed: onResetPressed,
+                  style: ButtonStyles.buttonSecondary.copyWith(
+                      shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16.0))),
+                      padding: const MaterialStatePropertyAll<EdgeInsets>(
+                          EdgeInsets.all(24.0)),
+                      backgroundColor: const MaterialStatePropertyAll<Color>(
+                          AppColors.surfaceSecondary)),
+                  child: const Text("Reset")),
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -91,21 +91,24 @@ class UsageStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-          color: AppColors.surfaceSecondary,
-          borderRadius: BorderRadius.all(Radius.circular(16))),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
-                  child: titleLockup()),
-              usageLockup()
-            ]),
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Container(
+        decoration: const BoxDecoration(
+            color: AppColors.surfaceSecondary,
+            borderRadius: BorderRadius.all(Radius.circular(16))),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: titleLockup()),
+                usageLockup()
+              ]),
+        ),
       ),
     );
   }

@@ -64,6 +64,24 @@ class DeviceStatus extends StatelessWidget {
     ]);
   }
 
+  Column offLockup() {
+    return Column(children: [
+      Padding(
+        padding: const EdgeInsets.only(top: 48),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Bluetooth is off",
+              style:
+                  TextStyles.caption.copyWith(color: AppColors.accentPrimary),
+            )
+          ],
+        ),
+      )
+    ]);
+  }
+
   Column emptyLockup() {
     return Column(children: [
       Padding(
@@ -123,25 +141,29 @@ class DeviceStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-          color: AppColors.surfacePrimary,
-          borderRadius: BorderRadius.all(Radius.circular(16))),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: titleLockup()),
-            (switch (status) {
-              DeviceState.connected => batteryLockup(),
-              DeviceState.connecting => emptyLockup(),
-              DeviceState.disconnected => actionLockup(),
-            })
-          ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Container(
+        decoration: const BoxDecoration(
+            color: AppColors.surfacePrimary,
+            borderRadius: BorderRadius.all(Radius.circular(16))),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: titleLockup()),
+              (switch (status) {
+                DeviceState.connected => batteryLockup(),
+                DeviceState.connecting => emptyLockup(),
+                DeviceState.disconnected => actionLockup(),
+                DeviceState.off => offLockup(),
+              })
+            ],
+          ),
         ),
       ),
     );
