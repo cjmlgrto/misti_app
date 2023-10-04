@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import 'package:app_template/constants.dart';
@@ -17,6 +19,9 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  late Timer _timer;
+
+  BluetoothDevice? device;
   DeviceState deviceState = DeviceState.off;
   UsageState usageState = UsageState.none;
   int batteryLevel = 0;
@@ -37,6 +42,82 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void update() async {
+    await device?.connect();
+
+    _timer = Timer.periodic(const Duration(milliseconds: 100), (Timer t) {
+      try {
+        device?.discoverServices().then((services) => {
+              services.forEach((service) async {
+                if (service.uuid.toString() == Device.service.toLowerCase()) {
+                  for (BluetoothCharacteristic c in service.characteristics) {
+                    List<int> value = await c.read();
+
+                    // batteryLevelCharacteristic
+                    if (c.uuid.toString() ==
+                        Device.batteryLevelCharacteristic.toLowerCase()) {
+                      setState(() {
+                        batteryLevel = value[0];
+                      });
+                    }
+
+                    // dosageCharacteristic
+                    if (c.uuid.toString() ==
+                        Device.dosageCharacteristic.toLowerCase()) {
+                      setState(() {
+                        if (value[0] == 0) {
+                          usageState = UsageState.min;
+                        }
+                      });
+                    }
+                  }
+                }
+              })
+            });
+      } catch (e) {
+        setState(() {
+          deviceState = DeviceState.disconnected;
+        });
+      }
+    });
+  }
+
+  void reset() async {
+    await device?.connect();
+
+    device?.discoverServices().then((services) => {
+          services.forEach((service) async {
+            if (service.uuid.toString() == Device.service.toLowerCase()) {
+              for (BluetoothCharacteristic c in service.characteristics) {
+                // resetCharacteristic
+                if (c.uuid.toString() ==
+                    Device.resetCharacteristic.toLowerCase()) {
+                  await c.write([0]);
+                }
+              }
+            }
+          })
+        });
+  }
+
+  void dispense() async {
+    await device?.connect();
+
+    device?.discoverServices().then((services) => {
+          services.forEach((service) async {
+            if (service.uuid.toString() == Device.service.toLowerCase()) {
+              for (BluetoothCharacteristic c in service.characteristics) {
+                // dispenseCharacteristic
+                if (c.uuid.toString() ==
+                    Device.dispenseCharacteristic.toLowerCase()) {
+                  await c.write([0]);
+                }
+              }
+            }
+          })
+        });
+  }
+
   void onConnectPressed() async {
     if (deviceState == DeviceState.disconnected) {
       setState(() {
@@ -50,8 +131,10 @@ class _HomeScreenState extends State<HomeScreen> {
             FlutterBluePlus.stopScan();
             result.device.connect();
             setState(() {
+              device = result.device;
               deviceState = DeviceState.connected;
             });
+            update();
           }
         }
       });
@@ -86,11 +169,11 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void onDispensePressed() {
-    print("Dispense Pressed");
+    dispense();
   }
 
   void onResetPressed() {
-    print("Reset Pressed");
+    reset();
   }
 
   @override
