@@ -66,7 +66,22 @@ class _HomeScreenState extends State<HomeScreen> {
                         Device.dosageCharacteristic.toLowerCase()) {
                       setState(() {
                         if (value[0] == 0) {
-                          usageState = UsageState.min;
+                          usageState = UsageState.none;
+                        }
+                        if (value[0] == 1) {
+                          usageState = UsageState.one;
+                        }
+                        if (value[0] == 2) {
+                          usageState = UsageState.two;
+                        }
+                        if (value[0] == 3) {
+                          usageState = UsageState.three;
+                        }
+                        if (value[0] == 4) {
+                          usageState = UsageState.four;
+                        }
+                        if (value[0] == 5) {
+                          usageState = UsageState.five;
                         }
                       });
                     }

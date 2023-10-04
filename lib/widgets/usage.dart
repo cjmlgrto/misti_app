@@ -48,20 +48,26 @@ class UsageStatus extends StatelessWidget {
     var barCount = 0;
 
     switch (usage) {
-      case UsageState.min:
+      case UsageState.one:
         barCount = 1;
         break;
-      case UsageState.mid:
+      case UsageState.two:
         barCount = 2;
         break;
-      case UsageState.max:
+      case UsageState.three:
         barCount = 3;
+        break;
+      case UsageState.four:
+        barCount = 4;
+        break;
+      case UsageState.five:
+        barCount = 5;
         break;
       default:
         break;
     }
 
-    var emptyCount = UsageState.values.length - barCount - 1;
+    var emptyCount = UsageState.values.length - barCount - 2;
 
     return Column(
       children: [
