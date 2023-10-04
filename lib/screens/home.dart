@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:app_template/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
 import 'package:app_template/constants.dart';
@@ -201,6 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
+                    Logo(),
                     if (deviceState == DeviceState.connected)
                       Expanded(
                           child: UsageStatus(
