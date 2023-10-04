@@ -1,10 +1,13 @@
-import 'package:app_template/screens/help.dart';
+import 'package:flutter/material.dart';
+
+import 'package:app_template/constants.dart';
 import 'package:app_template/model.dart';
+
+import 'package:app_template/screens/help.dart';
 import 'package:app_template/widgets/controls.dart';
 import 'package:app_template/widgets/status.dart';
 import 'package:app_template/widgets/usage.dart';
-import 'package:flutter/material.dart';
-import 'package:app_template/constants.dart';
+import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,11 +21,41 @@ class _HomeScreenState extends State<HomeScreen> {
   UsageState usageState = UsageState.none;
   int batteryLevel = 0;
 
-  void onConnectPressed() {
-    setState(() {
-      batteryLevel = 100;
-      deviceState = DeviceState.connected;
+  @override
+  void initState() {
+    super.initState();
+
+    FlutterBluePlus.adapterState.listen((state) {
+      setState(() {
+        if (state == BluetoothAdapterState.on) {
+          deviceState = DeviceState.disconnected;
+        }
+        if (state == BluetoothAdapterState.off) {
+          deviceState = DeviceState.off;
+        }
+      });
     });
+  }
+
+  void onConnectPressed() async {
+    if (deviceState == DeviceState.disconnected) {
+      setState(() {
+        deviceState = DeviceState.connecting;
+      });
+
+      await FlutterBluePlus.startScan();
+      FlutterBluePlus.scanResults.listen((results) {
+        for (ScanResult result in results) {
+          if (result.device.platformName == Device.name) {
+            FlutterBluePlus.stopScan();
+            result.device.connect();
+            setState(() {
+              deviceState = DeviceState.connected;
+            });
+          }
+        }
+      });
+    }
   }
 
   void onHelpPressed() {
