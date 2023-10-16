@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import 'package:app_template/screens/home.dart';
+import 'package:app_template/controller.dart';
 
 void main() {
   if (Platform.isAndroid) {
@@ -27,6 +27,6 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: HomeScreen());
+    return const MaterialApp(home: BluetoothController());
   }
 }

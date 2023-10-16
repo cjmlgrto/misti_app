@@ -21,7 +21,3 @@ class Device {
   static const String resetCharacteristic =
       "20B10028-E8F2-537E-4F6C-D104768A1214";
 }
-
-enum DeviceState { connected, connecting, disconnected, off }
-
-enum UsageState { none, zero, one, two, three, four, five }
