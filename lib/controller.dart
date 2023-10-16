@@ -24,13 +24,13 @@ class BluetoothController extends StatelessWidget {
             if (state == BluetoothAdapterState.on) {
               return const DeviceScanner();
             }
-            return Base(
+            return const Base(
                 child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Logo(),
-                const Center(
+                Center(
                   child: Text(
                     "Enable Bluetooth to connect",
                     style: TextStyles.subtitle,
@@ -67,13 +67,13 @@ class DeviceScanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     scanAndConnect(context);
-    return Base(
+    return const Base(
         child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Logo(),
-        const Center(
+        Center(
           child: Text(
             "Connecting...",
             style: TextStyles.subtitle,
