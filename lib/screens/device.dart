@@ -43,30 +43,36 @@ class _DeviceScreenState extends State<DeviceScreen> {
     List<BluetoothService> services = await widget.device.discoverServices();
 
     services.forEach((service) async {
-      var characteristics = service.characteristics;
-      for (BluetoothCharacteristic c in characteristics) {
-        List<int> value = await c.read();
+      if (service.uuid.toString() == Device.service.toLowerCase()) {
+        var characteristics = service.characteristics;
+        for (BluetoothCharacteristic c in characteristics) {
+          if (c.properties.read) {
+            List<int> value = await c.read();
 
-        // dosageCharacteristic
-        if (c.uuid.toString() == Device.dosageCharacteristic.toLowerCase()) {
-          setState(() {
-            dosageCharacteristic = value[0];
-          });
-        }
+            // dosageCharacteristic
+            if (c.uuid.toString() ==
+                Device.dosageCharacteristic.toLowerCase()) {
+              setState(() {
+                dosageCharacteristic = value[0];
+              });
+            }
 
-        // batteryLevelCharacteristic
-        if (c.uuid.toString() ==
-            Device.batteryLevelCharacteristic.toLowerCase()) {
-          setState(() {
-            batteryLevelCharacteristic = value[0];
-          });
-        }
+            // batteryLevelCharacteristic
+            if (c.uuid.toString() ==
+                Device.batteryLevelCharacteristic.toLowerCase()) {
+              setState(() {
+                batteryLevelCharacteristic = value[0];
+              });
+            }
 
-        // dispenseCharacteristic
-        if (c.uuid.toString() == Device.dispenseCharacteristic.toLowerCase()) {
-          setState(() {
-            dispenseCharacteristic = value[0];
-          });
+            // dispenseCharacteristic
+            if (c.uuid.toString() ==
+                Device.dispenseCharacteristic.toLowerCase()) {
+              setState(() {
+                dispenseCharacteristic = value[0];
+              });
+            }
+          }
         }
       }
     });
@@ -76,11 +82,14 @@ class _DeviceScreenState extends State<DeviceScreen> {
     List<BluetoothService> services = await widget.device.discoverServices();
 
     services.forEach((service) async {
-      var characteristics = service.characteristics;
-      for (BluetoothCharacteristic c in characteristics) {
-        // dispenseCharacteristic
-        if (c.uuid.toString() == Device.dispenseCharacteristic.toLowerCase()) {
-          c.write([0]);
+      if (service.uuid.toString() == Device.service.toLowerCase()) {
+        var characteristics = service.characteristics;
+        for (BluetoothCharacteristic c in characteristics) {
+          // dispenseCharacteristic
+          if (c.uuid.toString() ==
+              Device.dispenseCharacteristic.toLowerCase()) {
+            c.write([0]);
+          }
         }
       }
     });
@@ -90,17 +99,17 @@ class _DeviceScreenState extends State<DeviceScreen> {
     List<BluetoothService> services = await widget.device.discoverServices();
 
     services.forEach((service) async {
-      var characteristics = service.characteristics;
-      for (BluetoothCharacteristic c in characteristics) {
-        // resetCharacteristic
-        if (c.uuid.toString() == Device.resetCharacteristic.toLowerCase()) {
-          c.write([0]);
+      if (service.uuid.toString() == Device.service.toLowerCase()) {
+        var characteristics = service.characteristics;
+        for (BluetoothCharacteristic c in characteristics) {
+          // resetCharacteristic
+          if (c.uuid.toString() == Device.resetCharacteristic.toLowerCase()) {
+            c.write([0]);
+          }
         }
       }
     });
   }
-
-  void onConnectPressed() {}
 
   void onDosageGuidePressed() {
     Navigator.push(
