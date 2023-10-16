@@ -122,13 +122,12 @@ class ButtonStyles {
 
 class Strings {
   static const String deviceHelpTitle = "Device Troubleshooting";
-  static const String deviceHelpText = """ 
+  static const String dosageGuideTitle = "Dosage Guide";
+  static const String gettingStartedGuideTitle = "Getting Started";
+
+  static const String genericHelpText = """ 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
   """;
-
-  static const String usageGuideTitle = "Usage Guide";
-
-  static const String gettingStartedGuideTitle = "Getting Started";
 }

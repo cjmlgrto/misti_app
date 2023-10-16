@@ -1,10 +1,13 @@
-import 'package:app_template/screens/device.dart';
-import 'package:app_template/widgets/base.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 import 'package:app_template/constants.dart';
 import 'package:app_template/model.dart';
+
+import 'package:app_template/widgets/base.dart';
+import 'package:app_template/widgets/logo.dart';
+
+import 'package:app_template/screens/device.dart';
 
 class BluetoothController extends StatelessWidget {
   const BluetoothController({super.key});
@@ -21,7 +24,20 @@ class BluetoothController extends StatelessWidget {
             if (state == BluetoothAdapterState.on) {
               return const DeviceScanner();
             }
-            return const Base(child: Center(child: Text("Bluetooth is off")));
+            return Base(
+                child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Logo(),
+                const Center(
+                  child: Text(
+                    "Enable Bluetooth to connect",
+                    style: TextStyles.subtitle,
+                  ),
+                )
+              ],
+            ));
           }),
     );
   }
@@ -51,6 +67,19 @@ class DeviceScanner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     scanAndConnect(context);
-    return const Base(child: Center(child: Text("Connecting...")));
+    return Base(
+        child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Logo(),
+        const Center(
+          child: Text(
+            "Connecting...",
+            style: TextStyles.subtitle,
+          ),
+        )
+      ],
+    ));
   }
 }

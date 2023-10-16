@@ -20,4 +20,9 @@ class Device {
   // Reset function
   static const String resetCharacteristic =
       "20B10028-E8F2-537E-4F6C-D104768A1214";
+
+  // Theoratical maximum dosage count
+  static const int maxDosageCount = 5;
 }
+
+enum DeviceState { connected, connecting, disconnected, off }

@@ -4,8 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
 import 'package:app_template/model.dart';
+import 'package:app_template/constants.dart';
 
 import 'package:app_template/widgets/base.dart';
+import 'package:app_template/widgets/logo.dart';
+import 'package:app_template/widgets/usage.dart';
+import 'package:app_template/widgets/status.dart';
+import 'package:app_template/widgets/controls.dart';
+
+import 'package:app_template/screens/help.dart';
 
 class DeviceScreen extends StatefulWidget {
   final BluetoothDevice device;
@@ -93,6 +100,35 @@ class _DeviceScreenState extends State<DeviceScreen> {
     });
   }
 
+  void onConnectPressed() {}
+
+  void onDosageGuidePressed() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => const HelpScreen(
+                helpTitle: Strings.dosageGuideTitle,
+                helpText: Strings.genericHelpText)));
+  }
+
+  void onDeviceHelpPressed() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => const HelpScreen(
+                helpTitle: Strings.deviceHelpTitle,
+                helpText: Strings.genericHelpText)));
+  }
+
+  void onStarterGuidePressed() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => const HelpScreen(
+                helpTitle: Strings.gettingStartedGuideTitle,
+                helpText: Strings.genericHelpText)));
+  }
+
   void exit() {
     widget.device.disconnect();
   }
@@ -101,16 +137,25 @@ class _DeviceScreenState extends State<DeviceScreen> {
   Widget build(BuildContext context) {
     return Base(
         child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Center(child: Text("dosageCharacteristic: $dosageCharacteristic")),
-        Center(
-            child: Text(
-                "batteryLevelCharacteristic: $batteryLevelCharacteristic")),
-        Center(child: Text("dispenseCharacteristic: $dispenseCharacteristic")),
-        MaterialButton(onPressed: dispense, child: const Text("Dispense")),
-        MaterialButton(onPressed: reset, child: const Text("Reset"))
+        Logo(),
+        UsageStatus(
+            dispenseCount: dosageCharacteristic,
+            onHelpPressed: onDosageGuidePressed),
+        Expanded(
+            child: DeviceStatus(
+                status: DeviceState.connected,
+                batteryLevel: batteryLevelCharacteristic,
+                onHelpPressed: onDeviceHelpPressed)),
+        Controls(onDispensePressed: dispense, onResetPressed: reset),
+        Container(
+          width: double.infinity,
+          color: Colors.transparent,
+          child: ElevatedButton(
+              onPressed: onStarterGuidePressed,
+              style: ButtonStyles.buttonTertiary,
+              child: const Text("Getting Started Guide")),
+        )
       ],
     ));
   }
