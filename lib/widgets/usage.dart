@@ -1,7 +1,7 @@
-import 'package:app_template/model.dart';
+import 'package:misti/model.dart';
 import 'package:flutter/material.dart';
 
-import 'package:app_template/constants.dart';
+import 'package:misti/constants.dart';
 
 class UsageStatus extends StatelessWidget {
   final int dispenseCount;

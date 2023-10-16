@@ -3,16 +3,16 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
-import 'package:app_template/model.dart';
-import 'package:app_template/constants.dart';
+import 'package:misti/model.dart';
+import 'package:misti/constants.dart';
 
-import 'package:app_template/widgets/base.dart';
-import 'package:app_template/widgets/logo.dart';
-import 'package:app_template/widgets/usage.dart';
-import 'package:app_template/widgets/status.dart';
-import 'package:app_template/widgets/controls.dart';
+import 'package:misti/widgets/base.dart';
+import 'package:misti/widgets/logo.dart';
+import 'package:misti/widgets/usage.dart';
+import 'package:misti/widgets/status.dart';
+import 'package:misti/widgets/controls.dart';
 
-import 'package:app_template/screens/help.dart';
+import 'package:misti/screens/help.dart';
 
 class DeviceScreen extends StatefulWidget {
   final BluetoothDevice device;

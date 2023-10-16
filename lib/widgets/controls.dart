@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_template/constants.dart';
+import 'package:misti/constants.dart';
 
 class Controls extends StatelessWidget {
   final void Function() onDispensePressed;

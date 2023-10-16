@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import 'package:app_template/controller.dart';
+import 'package:misti/controller.dart';
 
 void main() {
   if (Platform.isAndroid) {

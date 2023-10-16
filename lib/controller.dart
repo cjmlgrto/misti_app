@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
 
-import 'package:app_template/constants.dart';
-import 'package:app_template/model.dart';
+import 'package:misti/constants.dart';
+import 'package:misti/model.dart';
 
-import 'package:app_template/widgets/base.dart';
-import 'package:app_template/widgets/logo.dart';
+import 'package:misti/widgets/base.dart';
+import 'package:misti/widgets/logo.dart';
 
-import 'package:app_template/screens/device.dart';
+import 'package:misti/screens/device.dart';
 
 class BluetoothController extends StatelessWidget {
   const BluetoothController({super.key});

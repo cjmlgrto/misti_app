@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:app_template/constants.dart';
+import 'package:misti/constants.dart';
 
 class HelpScreen extends StatelessWidget {
   final String helpTitle;

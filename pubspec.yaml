@@ -1,5 +1,5 @@
-name: app_template
-description: A new Flutter project.
+name: misti
+description: Connect to your Misti Mask.
 publish_to: 'none'
 version: 0.1.0
 
