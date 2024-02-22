@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:misti/screens/demo.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import 'package:misti/controller.dart';
@@ -27,6 +28,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(home: BluetoothController());
+    // return const MaterialApp(home: BluetoothController());
+    return const MaterialApp(home: DemoScreen());
   }
 }

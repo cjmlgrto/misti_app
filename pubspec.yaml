@@ -22,3 +22,6 @@ flutter:
 
   assets:
     - assets/images/logo.png
+    - assets/images/ground.png
+    - assets/images/MistiCloud.png
+    - assets/images/Pillow.png
