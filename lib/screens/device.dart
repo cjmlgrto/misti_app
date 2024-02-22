@@ -14,6 +14,8 @@ import 'package:misti/widgets/controls.dart';
 
 import 'package:misti/screens/help.dart';
 
+import 'package:misti/game/game.dart';
+
 class DeviceScreen extends StatefulWidget {
   final BluetoothDevice device;
 
@@ -142,6 +144,11 @@ class _DeviceScreenState extends State<DeviceScreen> {
     widget.device.disconnect();
   }
 
+  void startGame(BuildContext context) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: ((context) => const GameHomePage())));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Base(
@@ -164,6 +171,17 @@ class _DeviceScreenState extends State<DeviceScreen> {
               onPressed: onStarterGuidePressed,
               style: ButtonStyles.buttonTertiary,
               child: const Text("Getting Started Guide")),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 16),
+          child: Container(
+            width: double.infinity,
+            color: Colors.transparent,
+            child: ElevatedButton(
+                onPressed: () => startGame(context),
+                style: ButtonStyles.buttonTertiary,
+                child: const Text("Start Game")),
+          ),
         )
       ],
     ));
