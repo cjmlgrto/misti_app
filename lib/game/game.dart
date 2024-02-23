@@ -113,7 +113,7 @@ class _GameHomePageState extends State<GameHomePage> {
     final maxHeight = MediaQuery.of(context).size.height * 3 / 4;
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flappy Bird'),
+        title: const Text('Misti Cloud'),
       ),
       body: GestureDetector(
           onTap: () {
