@@ -7,7 +7,7 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(child:Text("Tap to Start Game",
+    return Container(child:const Text("Tap to Start Game",
         style: TextStyle(fontSize: 32, color: Colors.green)
     ));
   }

@@ -11,10 +11,10 @@ class Bird extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedContainer(
-        duration: Duration(milliseconds: 0),
+        duration: const Duration(milliseconds: 0),
         curve: Curves.linearToEaseOut,
         alignment: Alignment(-0.8, birdY),
-        child: Container(
+        child: SizedBox(
             width: 120,
             height: 120,
             child: Image.asset("assets/images/Pillow.png")));

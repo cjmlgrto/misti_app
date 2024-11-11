@@ -46,7 +46,7 @@ class BluetoothController extends StatelessWidget {
 // Device Scanner Screen
 // ------------------------------------------------------------
 class DeviceScanner extends StatelessWidget {
-  const DeviceScanner({Key? key}) : super(key: key);
+  const DeviceScanner({super.key});
 
   void scanAndConnect(BuildContext context) async {
     await FlutterBluePlus.startScan();
@@ -75,7 +75,7 @@ class DeviceScanner extends StatelessWidget {
         Logo(),
         Center(
           child: Text(
-            "Connecting...",
+            "connecting...",
             style: TextStyles.subtitle,
           ),
         )

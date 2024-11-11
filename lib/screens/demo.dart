@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:misti/constants.dart';
-import 'package:misti/game/game.dart';
+import 'package:misti/game/flappyBirdGame/game01.dart';
 import 'package:misti/model.dart';
 
 import 'package:misti/widgets/base.dart';
@@ -16,8 +16,10 @@ class DemoScreen extends StatelessWidget {
   void action() {}
 
   void startGame(BuildContext context) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: ((context) => const GameHomePage())));
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Game01()),
+    );
   }
 
   @override

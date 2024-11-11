@@ -3,15 +3,15 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'package:misti/game/bird.dart';
-import 'package:misti/game/scoreboard.dart';
-import 'package:misti/game/start.dart';
+import 'package:misti/game/oldFappyBirdCode/bird.dart';
+import 'package:misti/game/oldFappyBirdCode/scoreboard.dart';
+import 'package:misti/game/oldFappyBirdCode/start.dart';
 import 'cloud.dart';
 
 class GameHomePage extends StatefulWidget {
   final String title;
 
-  const GameHomePage({Key? key, this.title = ''}) : super(key: key);
+  const GameHomePage({super.key, this.title = ''});
 
   @override
   State<GameHomePage> createState() => _GameHomePageState();
@@ -52,7 +52,7 @@ class _GameHomePageState extends State<GameHomePage> {
       isRunning = true;
     });
 
-    timer = Timer.periodic(Duration(milliseconds: 50), (timer) {
+    timer = Timer.periodic(const Duration(milliseconds: 50), (timer) {
       final double newCloudX1 = cloudX1 - 0.02;
       final double newCloudX2 = cloudX2 - 0.02;
       bool isCrash = false;
@@ -137,7 +137,7 @@ class _GameHomePageState extends State<GameHomePage> {
                         Bird(birdY: birdY),
                         Container(
                             decoration:
-                                BoxDecoration(color: Colors.transparent))
+                                const BoxDecoration(color: Colors.transparent))
                       ])),
                   Expanded(
                       flex: 1,
@@ -153,8 +153,8 @@ class _GameHomePageState extends State<GameHomePage> {
                       startGame();
                     },
                     child: Container(
-                      alignment: Alignment(0, -0.2),
-                      child: StartScreen(),
+                      alignment: const Alignment(0, -0.2),
+                      child: const StartScreen(),
                     ))
             ],
           )),

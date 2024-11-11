@@ -22,12 +22,12 @@ class Controls extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: onDispensePressed,
                   style: ButtonStyles.buttonPrimary.copyWith(
-                      shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+                      shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16.0))),
-                      padding: const MaterialStatePropertyAll<EdgeInsets>(
+                      padding: const WidgetStatePropertyAll<EdgeInsets>(
                           EdgeInsets.all(24.0)),
-                      backgroundColor: const MaterialStatePropertyAll<Color>(
+                      backgroundColor: const WidgetStatePropertyAll<Color>(
                           AppColors.surfacePrimary)),
                   child: const Text("Dispense")),
             ),
@@ -38,12 +38,12 @@ class Controls extends StatelessWidget {
               child: ElevatedButton(
                   onPressed: onResetPressed,
                   style: ButtonStyles.buttonSecondary.copyWith(
-                      shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+                      shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(16.0))),
-                      padding: const MaterialStatePropertyAll<EdgeInsets>(
+                      padding: const WidgetStatePropertyAll<EdgeInsets>(
                           EdgeInsets.all(24.0)),
-                      backgroundColor: const MaterialStatePropertyAll<Color>(
+                      backgroundColor: const WidgetStatePropertyAll<Color>(
                           AppColors.surfaceSecondary)),
                   child: const Text("Reset")),
             ),

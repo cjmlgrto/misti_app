@@ -44,79 +44,79 @@ class TextStyles {
 
 class ButtonStyles {
   static ButtonStyle buttonPrimary = ButtonStyle(
-      textStyle: const MaterialStatePropertyAll<TextStyle>(TextStyle(
+      textStyle: const WidgetStatePropertyAll<TextStyle>(TextStyle(
           fontSize: 17,
           fontWeight: FontWeight.w600,
           letterSpacing: -0.4,
           inherit: false)),
       foregroundColor:
-          const MaterialStatePropertyAll<Color>(AppColors.accentPrimary),
+          const WidgetStatePropertyAll<Color>(AppColors.accentPrimary),
       backgroundColor:
-          const MaterialStatePropertyAll<Color>(AppColors.buttonBackground),
-      fixedSize: const MaterialStatePropertyAll<Size?>(Size.fromWidth(160)),
-      shadowColor: const MaterialStatePropertyAll<Color>(Colors.transparent),
-      padding: const MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.all(16.0)),
-      shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+          const WidgetStatePropertyAll<Color>(AppColors.buttonBackground),
+      fixedSize: const WidgetStatePropertyAll<Size?>(Size.fromWidth(160)),
+      shadowColor: const WidgetStatePropertyAll<Color>(Colors.transparent),
+      padding: const WidgetStatePropertyAll<EdgeInsets>(EdgeInsets.all(16.0)),
+      shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))));
 
   static ButtonStyle buttonMiniPrimary = ButtonStyle(
-      textStyle: const MaterialStatePropertyAll<TextStyle>(TextStyle(
+      textStyle: const WidgetStatePropertyAll<TextStyle>(TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.w600,
           letterSpacing: -0.4,
           inherit: false)),
       foregroundColor:
-          const MaterialStatePropertyAll<Color>(AppColors.accentPrimary),
+          const WidgetStatePropertyAll<Color>(AppColors.accentPrimary),
       backgroundColor:
-          const MaterialStatePropertyAll<Color>(AppColors.buttonBackground),
-      shadowColor: const MaterialStatePropertyAll<Color>(Colors.transparent),
-      shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+          const WidgetStatePropertyAll<Color>(AppColors.buttonBackground),
+      shadowColor: const WidgetStatePropertyAll<Color>(Colors.transparent),
+      shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(48.0))));
 
   static ButtonStyle buttonSecondary = ButtonStyle(
-      textStyle: const MaterialStatePropertyAll<TextStyle>(TextStyle(
+      textStyle: const WidgetStatePropertyAll<TextStyle>(TextStyle(
           fontSize: 17,
           fontWeight: FontWeight.w600,
           letterSpacing: -0.4,
           inherit: false)),
       foregroundColor:
-          const MaterialStatePropertyAll<Color>(AppColors.accentSecondary),
+          const WidgetStatePropertyAll<Color>(AppColors.accentSecondary),
       backgroundColor:
-          const MaterialStatePropertyAll<Color>(AppColors.buttonBackground),
-      fixedSize: const MaterialStatePropertyAll<Size?>(Size.fromWidth(160)),
-      shadowColor: const MaterialStatePropertyAll<Color>(Colors.transparent),
-      padding: const MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.all(8.0)),
-      shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+          const WidgetStatePropertyAll<Color>(AppColors.buttonBackground),
+      fixedSize: const WidgetStatePropertyAll<Size?>(Size.fromWidth(160)),
+      shadowColor: const WidgetStatePropertyAll<Color>(Colors.transparent),
+      padding: const WidgetStatePropertyAll<EdgeInsets>(EdgeInsets.all(8.0)),
+      shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0))));
 
   static ButtonStyle buttonMiniSecondary = ButtonStyle(
-      textStyle: const MaterialStatePropertyAll<TextStyle>(TextStyle(
+      textStyle: const WidgetStatePropertyAll<TextStyle>(TextStyle(
           fontSize: 15,
           fontWeight: FontWeight.w600,
           letterSpacing: -0.4,
           inherit: false)),
       foregroundColor:
-          const MaterialStatePropertyAll<Color>(AppColors.accentSecondary),
+          const WidgetStatePropertyAll<Color>(AppColors.accentSecondary),
       backgroundColor:
-          const MaterialStatePropertyAll<Color>(AppColors.buttonBackground),
-      shadowColor: const MaterialStatePropertyAll<Color>(Colors.transparent),
-      shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+          const WidgetStatePropertyAll<Color>(AppColors.buttonBackground),
+      shadowColor: const WidgetStatePropertyAll<Color>(Colors.transparent),
+      shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(48.0))));
 
   static ButtonStyle buttonTertiary = ButtonStyle(
-      textStyle: const MaterialStatePropertyAll<TextStyle>(TextStyle(
+      textStyle: const WidgetStatePropertyAll<TextStyle>(TextStyle(
           fontSize: 17,
           fontWeight: FontWeight.w600,
           letterSpacing: -0.4,
           inherit: false)),
       foregroundColor:
-          const MaterialStatePropertyAll<Color>(AppColors.accentTertiary),
+          const WidgetStatePropertyAll<Color>(AppColors.accentTertiary),
       backgroundColor:
-          const MaterialStatePropertyAll<Color>(AppColors.surfaceTertiary),
-      fixedSize: const MaterialStatePropertyAll<Size?>(Size.fromWidth(160)),
-      shadowColor: const MaterialStatePropertyAll<Color>(Colors.transparent),
-      padding: const MaterialStatePropertyAll<EdgeInsets>(EdgeInsets.all(24.0)),
-      shape: MaterialStatePropertyAll<RoundedRectangleBorder>(
+          const WidgetStatePropertyAll<Color>(AppColors.surfaceTertiary),
+      fixedSize: const WidgetStatePropertyAll<Size?>(Size.fromWidth(160)),
+      shadowColor: const WidgetStatePropertyAll<Color>(Colors.transparent),
+      padding: const WidgetStatePropertyAll<EdgeInsets>(EdgeInsets.all(24.0)),
+      shape: WidgetStatePropertyAll<RoundedRectangleBorder>(
           RoundedRectangleBorder(borderRadius: BorderRadius.circular(16.0))));
 }
 

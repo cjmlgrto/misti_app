@@ -14,12 +14,12 @@ import 'package:misti/widgets/controls.dart';
 
 import 'package:misti/screens/help.dart';
 
-import 'package:misti/game/game.dart';
+import 'package:misti/game/oldFappyBirdCode/game.dart';
 
 class DeviceScreen extends StatefulWidget {
   final BluetoothDevice device;
 
-  const DeviceScreen({Key? key, required this.device}) : super(key: key);
+  const DeviceScreen({super.key, required this.device});
 
   @override
   State<DeviceScreen> createState() => _DeviceScreenState();
@@ -154,7 +154,7 @@ class _DeviceScreenState extends State<DeviceScreen> {
     return Base(
         child: Column(
       children: [
-        Logo(),
+        const Logo(),
         UsageStatus(
             dispenseCount: dosageCharacteristic,
             onHelpPressed: onDosageGuidePressed),

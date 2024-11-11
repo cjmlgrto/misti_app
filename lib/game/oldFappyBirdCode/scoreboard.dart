@@ -12,9 +12,9 @@ class ScoreBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/ground.png"),
+            image: AssetImage("assets/images/ground2.png"),
             fit: BoxFit.fitHeight,
           ),
         ),
@@ -25,19 +25,19 @@ class ScoreBoard extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Current Score",
+                const Text("Current Score",
                     style: TextStyle(fontSize: 20, color: Colors.green)),
                 Text(curScore.toString(),
-                    style: TextStyle(fontSize: 20, color: Colors.green))
+                    style: const TextStyle(fontSize: 20, color: Colors.green))
               ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Highest Score",
+                const Text("Highest Score",
                     style: TextStyle(fontSize: 20, color: Colors.red)),
                 Text(maxScore.toString(),
-                    style: TextStyle(fontSize: 20, color: Colors.red))
+                    style: const TextStyle(fontSize: 20, color: Colors.red))
               ],
             )
           ],
