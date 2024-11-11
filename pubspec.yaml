@@ -25,11 +25,12 @@ flutter:
 
   assets:
     - assets/images/logo.png
-    - assets/images/ground2.png
+    - assets/images/flappyBirdGames/ground2.png
     - assets/images/MistiCloud.png
     - assets/images/Pillow.png
     - assets/images/
+    - assets/images/flappyBirdGames/
     - assets/audio/
-    - assets/images/menu.jpg
-    - assets/images/message.png
-    - assets/images/gameover.png
+    - assets/images/flappyBirdGames/menu.jpg
+    - assets/images/flappyBirdGames/message.png
+    - assets/images/flappyBirdGames/gameover.png
