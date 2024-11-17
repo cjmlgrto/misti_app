@@ -81,7 +81,7 @@ class DemoScreen extends StatelessWidget {
                         ),
                         GameTile(
                           imagePath: 'assets/images/superjump.png',
-                          gameTitle: 'Fruit Ninja',
+                          gameTitle: 'Coming soon',
                           onTap: () => startSuperJump(context),
                         ),
                       ],
