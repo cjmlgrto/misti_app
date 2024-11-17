@@ -20,7 +20,7 @@ class GameOverScreen extends StatelessWidget {
             Text(
               'Score: ${game.bird.score}',
               style: const TextStyle(
-                fontSize: 60,
+                fontSize: 48,
                 color: Colors.white,
                 fontFamily: 'Bold',
               ),
@@ -29,18 +29,23 @@ class GameOverScreen extends StatelessWidget {
             const SizedBox(height: 20,),
 
 
-            Image.asset('assets/images/gameover.png'),
+            Image.asset('assets/images/flappyBirdGames/gameover.png'),
             const SizedBox(height: 20,),
 
             ElevatedButton(
-                onPressed: onRestart,
-                style: ElevatedButton.styleFrom(backgroundColor: Colors.orange),
-                child: const Text(
-                  'Restart',
-                  style: TextStyle(fontSize: 20 , color: Colors.white),
-
-                )
+              onPressed: onRestart,
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF03A1A9), // Custom color code
+                foregroundColor: Colors.white,     // Optional: Text and icon color
+              ),
+              child: const Text(
+                'Restart',
+                style: TextStyle(
+                  fontSize: 20,
+                ),
+              ),
             )
+
 
           ],
         ),

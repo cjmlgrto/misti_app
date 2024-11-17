@@ -17,7 +17,7 @@ class Game01 extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFFFFFFFF), // White background
         title: const Text(
-          'Misti games: flappy bird',
+          'Misti games: Baby Bounce',
           style: TextStyle(
             fontSize: 16, // Font size 16px
             color: Colors.black,

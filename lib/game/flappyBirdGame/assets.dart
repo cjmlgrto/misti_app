@@ -1,16 +1,16 @@
 class Assets{
-  static const background = "background.png";
-  static const ground = "ground2.png";
-  static const clouds = "clouds.png";
-  static const pipe = "pipe.png";
-  static const pipeRotated = "pipe_rotated.png";
+  static const background = "flappyBirdGames/background.png";
+  static const ground = "flappyBirdGames/ground2.png";
+  static const clouds = "flappyBirdGames/clouds.png";
+  static const pipe = "flappyBirdGames/pipe.png";
+  static const pipeRotated = "flappyBirdGames/pipe_rotated.png";
 
-  static const birdMidFlap = "bird_midflap.png";
-  static const  birdUpFlap= "bird_upflap.png";
-  static const birdDownFlap = "bird_downflap.png";
+  static const birdMidFlap = "flappyBirdGames/bird_midflap.png";
+  static const  birdUpFlap= "flappyBirdGames/bird_upflap.png";
+  static const birdDownFlap = "flappyBirdGames/bird_downflap.png";
 
-  static const gameOver= "gameover.png";
-  static const menu = "menu.jpg";
-  static const message = "message.png";
+  static const gameOver= "flappyBirdGames/gameover.png";
+  static const menu = "flappyBirdGames/menu.png";
+  static const message = "flappyBirdGames/message.png";
 
 }

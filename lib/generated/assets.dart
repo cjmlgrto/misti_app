@@ -20,8 +20,18 @@ class Assets {
   static const String flappyBirdGamesMessage = 'assets/images/flappyBirdGames/message.png';
   static const String flappyBirdGamesPipe = 'assets/images/flappyBirdGames/pipe.png';
   static const String flappyBirdGamesPipeRotated = 'assets/images/flappyBirdGames/pipe_rotated.png';
+  static const String imagesFlappy = 'assets/images/flappy.png';
+  static const String imagesFlappyBirdGamesGameover = 'assets/images/flappyBirdGames/gameover.png';
+  static const String imagesFlappyBirdGamesGround2 = 'assets/images/flappyBirdGames/ground2.png';
+  static const String imagesFlappyBirdGamesMenu = 'assets/images/flappyBirdGames/menu.jpg';
+  static const String imagesFlappyBirdGamesMessage = 'assets/images/flappyBirdGames/message.png';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesMenu = 'assets/images/menu.png';
   static const String imagesMistiCloud = 'assets/images/MistiCloud.png';
   static const String imagesPillow = 'assets/images/Pillow.png';
+  static const String imagesSuperjump = 'assets/images/superjump.png';
+  static const String lamaBirdDownflap = 'assets/images/flappyBirdGames/lama/bird_downflap.png';
+  static const String lamaBirdMidflap = 'assets/images/flappyBirdGames/lama/bird_midflap.png';
+  static const String lamaBirdUpflap = 'assets/images/flappyBirdGames/lama/bird_upflap.png';
 
 }

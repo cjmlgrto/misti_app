@@ -22,13 +22,13 @@ class MainMenuScreen extends StatelessWidget{
           height: double.infinity,
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/images/menu.jpg'),
+              image: AssetImage('assets/images/flappyBirdGames/menu.png'),
               fit: BoxFit.cover,
             ),
           ),
 
           child: Image.asset(
-            "assets/images/message.png",
+            "assets/images/flappyBirdGames/message.png",
           ),
 
         ),
