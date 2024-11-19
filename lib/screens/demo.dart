@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:misti/constants.dart';
 import 'package:misti/game/flappyBirdGame/game01.dart';
+import 'package:misti/game/fruit_cutting_game/main.dart';
 import 'package:misti/model.dart';
 import 'package:misti/widgets/base.dart';
 import 'package:misti/widgets/controls.dart';
@@ -23,7 +24,7 @@ class DemoScreen extends StatelessWidget {
   void startSuperJump(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const Game01()), // Change to actual SuperJump game widget
+      MaterialPageRoute(builder: (context) => const Game02()), // Change to actual SuperJump game widget
     );
   }
 
