@@ -63,7 +63,7 @@ class _WebTitleSwitcherWebState extends State<WebTitleSwitcher> {
   }
 
   void _updateTabTitle() {
-    final String title = _isTabActive ? "ChunhThanhDe - Fruit Cutting Game 🍎" : "Contact to cooperate 🍎";
+    final String title = _isTabActive ? "Create with 🍎 by misti games" : "Create with 🍎 by misti games";
     html.document.title = title;
   }
 

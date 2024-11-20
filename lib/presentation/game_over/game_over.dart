@@ -144,7 +144,7 @@ class GameOverPage extends Component
         ),
         _textGameModeComponent = TextComponent(
           text:
-              "Mode: ${game.mode == 0 ? 'Easy' : game.mode == 1 ? 'Medium' : 'Hard'}",
+              "Misti Games",
           position: flameGame.canvasSize / 2,
           anchor: game.isDesktop ? Anchor.centerLeft : Anchor.center,
           textRenderer: textPaint,

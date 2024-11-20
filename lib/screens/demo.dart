@@ -8,6 +8,8 @@ import 'package:misti/widgets/controls.dart';
 import 'package:misti/widgets/logo.dart';
 import 'package:misti/widgets/status.dart';
 import 'package:misti/widgets/usage.dart';
+import 'package:flame/flame.dart';
+import 'package:flutter/services.dart';
 
 class DemoScreen extends StatelessWidget {
   const DemoScreen({super.key});
@@ -30,6 +32,15 @@ class DemoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // Enforce portrait orientation dynamically
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+    });
+
     return Base(
       child: SingleChildScrollView( // Wrap Column in SingleChildScrollView
         child: Column(
@@ -82,7 +93,7 @@ class DemoScreen extends StatelessWidget {
                         ),
                         GameTile(
                           imagePath: 'assets/images/superjump.png',
-                          gameTitle: 'Coming soon',
+                          gameTitle: 'Virus Vanquisher',
                           onTap: () => startSuperJump(context),
                         ),
                       ],
@@ -91,7 +102,6 @@ class DemoScreen extends StatelessWidget {
                 ),
               ),
             ),
-
           ],
         ),
       ),
@@ -113,6 +123,7 @@ class GameTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return GestureDetector(
       onTap: onTap,
       child: Column(
@@ -134,8 +145,8 @@ class GameTile extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(bottom: 10), // Space from the bottom
                     padding: const EdgeInsets.symmetric(
-                      horizontal: 15,  // Left and right padding
-                      vertical: 10,    // Top and bottom padding
+                      horizontal: 10,  // Left and right padding
+                      vertical: 8,    // Top and bottom padding
                     ),
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.6),  // Semi-transparent background
@@ -145,7 +156,7 @@ class GameTile extends StatelessWidget {
                       gameTitle,
                       style: const TextStyle(
                         color: Colors.white,  // White text color for contrast
-                        fontSize: 16,
+                        fontSize: 12,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -159,5 +170,4 @@ class GameTile extends StatelessWidget {
       ),
     );
   }
-
 }

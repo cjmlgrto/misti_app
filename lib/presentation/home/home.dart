@@ -41,47 +41,52 @@ class HomePage extends Component with HasGameReference<MainRouterGame> {
           onPressed: () {
             game.router.pushNamed(AppRouter.gamePage);
           },
-          bgColor: AppColors.blue,
+          bgColor: const Color(0xFF04A1AB), // Updated color
           borderColor: AppColors.white,
         ),
         _ediblesTextComponent = TextComponent(
-          text: 'Edibles',
+          text: 'Tap To Kill',
           position: Vector2(45, 10),
           anchor: Anchor.topLeft,
           textRenderer: textTitlePaint,
         ),
         _tutorialRuleLose1Component = SimpleCenterText(
-          text: 'Bomb explodes is lose,',
+          text: 'Misti Games\n',
           textColor: AppColors.white,
-          fontSize: 28,
+          fontSize: 18,
         ),
         _tutorialRuleLose2Component = SimpleCenterText(
-          text: 'miss three fruit is a loss.',
+          text: 'Virus Vanquisher',
           textColor: AppColors.white,
-          fontSize: 28,
+          fontSize: 36,
         ),
         _tutorialRuleScore1Component = SimpleCenterText(
-          text: 'Hit 1 fruit for 1 point,',
+          text: 'Protect the kids from harmful bacteria!',
           textColor: AppColors.white,
-          fontSize: 28,
+          fontSize: 16,
         ),
         _tutorialRuleScore2Component = SimpleCenterText(
-          text: '1 fruit can earn many points..',
+          text: 'Earn points for each bacteria you eliminate...',
           textColor: AppColors.white,
-          fontSize: 28,
+          fontSize: 16,
         ),
         TutorialFruitsListComponent(
           isLeft: true,
           fruits: [
-            TutorialFruitComponent(text: 'Apple', imagePath: AppImages.apple, isLeft: true),
-            TutorialFruitComponent(text: 'Banana', imagePath: AppImages.banana, isLeft: true),
-            TutorialFruitComponent(text: 'Cherry', imagePath: AppImages.cherry, isLeft: true),
-            TutorialFruitComponent(text: 'Kiwi', imagePath: AppImages.kiwi, isLeft: true),
-            TutorialFruitComponent(text: 'Orange', imagePath: AppImages.orange, isLeft: true),
+            TutorialFruitComponent(
+                text: 'RSV', imagePath: AppImages.apple, isLeft: true),
+            TutorialFruitComponent(
+                text: 'Influenza', imagePath: AppImages.banana, isLeft: true),
+            TutorialFruitComponent(
+                text: 'COVID-19', imagePath: AppImages.cherry, isLeft: true),
+            TutorialFruitComponent(
+                text: 'Rhinovirus', imagePath: AppImages.kiwi, isLeft: true),
+            TutorialFruitComponent(
+                text: 'Adenovirus', imagePath: AppImages.orange, isLeft: true),
           ],
-        )..position = Vector2(0, 50),
+        )..position = Vector2(0, 30),
         _bombTextComponent = TextComponent(
-          text: 'Bomb',
+          text: "Don't Kill",
           position: Vector2(game.size.x - 45, 10),
           anchor: Anchor.topRight,
           textRenderer: textTitlePaint,
@@ -89,9 +94,12 @@ class HomePage extends Component with HasGameReference<MainRouterGame> {
         TutorialFruitsListComponent(
           isLeft: false,
           fruits: [
-            TutorialFruitComponent(text: 'Bomp', imagePath: AppImages.bomb, isLeft: false),
-            TutorialFruitComponent(text: 'Flame', imagePath: AppImages.flame, isLeft: false),
-            TutorialFruitComponent(text: 'Flutter', imagePath: AppImages.flutter, isLeft: false),
+            TutorialFruitComponent(
+                text: 'Children', imagePath: AppImages.bomb, isLeft: false),
+            TutorialFruitComponent(
+                text: 'Bubble', imagePath: AppImages.flame, isLeft: false),
+            TutorialFruitComponent(
+                text: 'Baby', imagePath: AppImages.flutter, isLeft: false),
           ],
         )..position = Vector2(0, 50),
       ],
@@ -104,10 +112,14 @@ class HomePage extends Component with HasGameReference<MainRouterGame> {
 
     // button in center of page
     _button.position = size / 2;
-    _tutorialRuleScore1Component.position = Vector2(game.size.x / 2, game.size.y - game.size.y / 3.9);
-    _tutorialRuleScore2Component.position = Vector2(game.size.x / 2, game.size.y - game.size.y / 5.1);
-    _tutorialRuleLose1Component.position = Vector2(game.size.x / 2, game.size.y / 5.1);
-    _tutorialRuleLose2Component.position = Vector2(game.size.x / 2, game.size.y / 3.9);
+    _tutorialRuleScore1Component.position =
+        Vector2(game.size.x / 2, game.size.y - game.size.y / 3.9);
+    _tutorialRuleScore2Component.position =
+        Vector2(game.size.x / 2, game.size.y - game.size.y / 5.1);
+    _tutorialRuleLose1Component.position =
+        Vector2(game.size.x / 2, game.size.y / 5.1);
+    _tutorialRuleLose2Component.position =
+        Vector2(game.size.x / 2, game.size.y / 3.9);
     _bombTextComponent.position = Vector2(game.size.x - 45, 10);
   }
 }
