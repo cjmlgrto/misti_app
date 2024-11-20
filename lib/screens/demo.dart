@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:misti/constants.dart';
 import 'package:misti/game/flappyBirdGame/game01.dart';
-import 'package:misti/game/fruit_cutting_game/main.dart';
+import 'package:misti/game/fruit_cutting_game/game02.dart';
 import 'package:misti/model.dart';
 import 'package:misti/widgets/base.dart';
 import 'package:misti/widgets/controls.dart';
 import 'package:misti/widgets/logo.dart';
 import 'package:misti/widgets/status.dart';
 import 'package:misti/widgets/usage.dart';
-import 'package:flame/flame.dart';
-import 'package:flutter/services.dart';
 
 class DemoScreen extends StatelessWidget {
   const DemoScreen({super.key});
@@ -32,14 +30,6 @@ class DemoScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    // Enforce portrait orientation dynamically
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      SystemChrome.setPreferredOrientations([
-        DeviceOrientation.portraitUp,
-        DeviceOrientation.portraitDown,
-      ]);
-    });
 
     return Base(
       child: SingleChildScrollView( // Wrap Column in SingleChildScrollView

@@ -1,28 +1,28 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flame/flame.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:misti/screens/demo.dart';
 import 'package:flutter/services.dart'; // Import to control system settings
-import 'package:flutter/services.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized(); // Ensure Flutter engine is initialized
 
-  // Force portrait orientation
-  await SystemChrome.setPreferredOrientations([
+  // Lock the orientation to portrait mode
+  SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
-  ]);
-
-  // Handle permissions for Android
-  if (Platform.isAndroid) {
-    await requestPermissions();
-  }
-
-  // Start the app
-  runApp(const MainApp());
+  ]).then((_) {
+    runApp(const MainApp());
+  });
 }
+
+//   // Handle permissions for Android
+//   if (Platform.isAndroid) {
+//     await requestPermissions();
+//   }
+//
+//   // Start the app
+//   runApp(const MainApp());
+// }
 
 /// Function to request permissions
 Future<void> requestPermissions() async {
