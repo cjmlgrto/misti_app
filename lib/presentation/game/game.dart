@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'dart:ui';
-
 import 'package:flame/components.dart';
 import 'package:flame/events.dart';
 import 'package:flame/extensions.dart';
@@ -18,10 +17,12 @@ import 'package:misti/presentation/game/widgets/fruit_slice_component.dart';
 import 'package:misti/presentation/game/widgets/slice_component.dart';
 
 /// The main game page where the game play happens.
-class GamePage extends Component with DragCallbacks, HasGameReference<MainRouterGame> {
+class GamePage extends Component
+    with DragCallbacks, HasGameReference<MainRouterGame> {
   // Random number generator for fruit timings
   final Random random = Random();
-  late List<double> fruitsTime; // List to hold the timing for when fruits appear
+  late List<double>
+      fruitsTime; // List to hold the timing for when fruits appear
 
   // Timing variables
   late double time; // Current elapsed time
@@ -52,7 +53,8 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
     // Initialize game variables
     fruitsTime = []; // List to store timings for fruit appearances
     countDown = 5; // Start countdown from 3 seconds
-    mistakeCount = 0; // Initialize mistake count to zero (no mistakes at the start)
+    mistakeCount =
+        0; // Initialize mistake count to zero (no mistakes at the start)
     score = 0; // Set initial score to zero
     time = 0; // No time has passed at the start
     _countdownFinished = false; // Countdown has not finished yet
@@ -131,12 +133,14 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
       ),
       _scoreTextComponent = TextComponent(
         text: 'Score: $score',
-        position: Vector2(game.size.x - 15, _mistakeTextComponent!.position.y + 40),
+        position:
+            Vector2(game.size.x - 15, _mistakeTextComponent!.position.y + 40),
         anchor: Anchor.topRight,
         textRenderer: scoreTextPaint,
       ),
       _modeTextComponent = TextComponent(
-        text: 'Mode ${game.mode == 0 ? 'Easy' : game.mode == 1 ? 'Medium' : 'Hard'}',
+        text:
+            'Mode ${game.mode == 0 ? 'Easy' : game.mode == 1 ? 'Medium' : 'Hard'}',
         position: Vector2(game.size.x - 15, game.size.y - 15),
         anchor: Anchor.bottomRight,
         textRenderer: modeTextPaint,
@@ -162,13 +166,16 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
         _countdownFinished = true; // Set countdown finished flag
       }
     } else if (fruitsTime.isEmpty && !hasFruits()) {
-      if (_countdownTextComponent != null && !_countdownTextComponent!.isMounted) {
-        _countdownTextComponent?.addToParent(this); // Add to parent if not already on screen
+      if (_countdownTextComponent != null &&
+          !_countdownTextComponent!.isMounted) {
+        _countdownTextComponent
+            ?.addToParent(this); // Add to parent if not already on screen
       }
 
       // Update the countdown text component with the current value
       if (level == 10) {
-        _countdownTextComponent?.text = (finishCountDown.toInt() + 1).toString(); // Convert to int for display
+        _countdownTextComponent?.text = (finishCountDown.toInt() + 1)
+            .toString(); // Convert to int for display
       } else {
         _countdownTextComponent?.text = "- Level ${level + 1} -";
       }
@@ -233,7 +240,9 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
         if (element.canDragOnShape) {
           game.isDesktop ? onFruitSliced(sliceTrail) : null;
           element.touchAtPoint(event.canvasStartPosition);
-          game.isDesktop ? game.add(FruitSliceComponent(event.canvasStartPosition)) : null;
+          game.isDesktop
+              ? game.add(FruitSliceComponent(event.canvasStartPosition))
+              : null;
           game.isDesktop ? playRandomSliceSound() : null;
         }
       }
@@ -252,7 +261,8 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
 
     _countdownTextComponent?.position = game.size / 2;
     _mistakeTextComponent?.position = Vector2(game.size.x - 15, 10);
-    _scoreTextComponent?.position = Vector2(game.size.x - 15, _mistakeTextComponent!.position.y + 40);
+    _scoreTextComponent?.position =
+        Vector2(game.size.x - 15, _mistakeTextComponent!.position.y + 40);
     _modeTextComponent?.position = Vector2(game.size.x - 15, game.size.y - 15);
   }
 
@@ -297,7 +307,8 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
   /// Increment the mistake count and update the mistake display.
   void addMistake() {
     mistakeCount++; // Increase mistake count by one
-    _mistakeTextComponent?.text = 'Mistake: $mistakeCount'; // Update mistake display
+    _mistakeTextComponent?.text =
+        'Mistake: $mistakeCount'; // Update mistake display
     // Check if the player has made too many mistakes
     if (mistakeCount >= 4) {
       gameOver(); // End the game if mistakes exceed limit
@@ -315,7 +326,8 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
 
   void generateFruitTimings() {
     fruitsTime.clear();
-    double initTime = 0; // Variable to store the initial time for fruit generation
+    double initTime =
+        0; // Variable to store the initial time for fruit generation
 
     int fruitCount = getFruitCount(level, game.mode);
     double minInterval = getMinInterval(level, game.mode);
@@ -325,7 +337,8 @@ class GamePage extends Component with DragCallbacks, HasGameReference<MainRouter
       if (i != 0) initTime = fruitsTime.last;
 
       double milliSecondTime = random.nextInt(100) / 100;
-      double componentTime = random.nextInt(1) * minInterval + milliSecondTime + initTime;
+      double componentTime =
+          random.nextInt(1) * minInterval + milliSecondTime + initTime;
 
       fruitsTime.add(componentTime);
     }
