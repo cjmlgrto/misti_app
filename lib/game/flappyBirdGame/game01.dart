@@ -1,6 +1,7 @@
 
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
+import 'package:flame/flame.dart';
 import 'package:misti/screens/flappyBirdGame/game_over_screen.dart';
 import 'package:misti/screens/flappyBirdGame/main_menu_screen.dart';
 import 'flappy_bird_game.dart';
@@ -10,6 +11,11 @@ class Game01 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    // Initialize Flame device settings
+    WidgetsFlutterBinding.ensureInitialized();
+    Flame.device.setPortrait();
+
     final game = FlappyBirdGame();
     final maxHeight = MediaQuery.of(context).size.height * 1 ;
 
