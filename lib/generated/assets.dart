@@ -8,30 +8,83 @@ class Assets {
   static const String audioCollision = 'assets/audio/collision.wav';
   static const String audioFly = 'assets/audio/fly.wav';
   static const String audioPoint = 'assets/audio/point.wav';
-  static const String flappyBirdGamesBackground = 'assets/images/flappyBirdGames/background.png';
-  static const String flappyBirdGamesBirdDownflap = 'assets/images/flappyBirdGames/bird_downflap.png';
-  static const String flappyBirdGamesBirdMidflap = 'assets/images/flappyBirdGames/bird_midflap.png';
-  static const String flappyBirdGamesBirdUpflap = 'assets/images/flappyBirdGames/bird_upflap.png';
-  static const String flappyBirdGamesClouds = 'assets/images/flappyBirdGames/clouds.png';
-  static const String flappyBirdGamesGameover = 'assets/images/flappyBirdGames/gameover.png';
-  static const String flappyBirdGamesGround = 'assets/images/flappyBirdGames/ground.png';
-  static const String flappyBirdGamesGround2 = 'assets/images/flappyBirdGames/ground2.png';
-  static const String flappyBirdGamesMenu = 'assets/images/flappyBirdGames/menu.jpg';
-  static const String flappyBirdGamesMessage = 'assets/images/flappyBirdGames/message.png';
-  static const String flappyBirdGamesPipe = 'assets/images/flappyBirdGames/pipe.png';
-  static const String flappyBirdGamesPipeRotated = 'assets/images/flappyBirdGames/pipe_rotated.png';
+  static const String backupApple = 'assets/images/backup/apple.png';
+  static const String backupBanana = 'assets/images/backup/banana.png';
+  static const String backupBomb = 'assets/images/backup/bomb.png';
+  static const String backupCherry = 'assets/images/backup/cherry.png';
+  static const String backupFlame = 'assets/images/backup/flame.png';
+  static const String backupFlutter = 'assets/images/backup/flutter.png';
+  static const String backupKiwi = 'assets/images/backup/kiwi.png';
+  static const String backupOrange = 'assets/images/backup/orange.png';
+  static const String backupPeach = 'assets/images/backup/peach.png';
+  static const String backupPineapple = 'assets/images/backup/pineapple.png';
+  static const String backupWatermelon = 'assets/images/backup/watermelon.png';
+  static const String flappyBirdGamesBackground =
+      'assets/images/flappyBirdGames/background.png';
+  static const String flappyBirdGamesBirdDownflap =
+      'assets/images/flappyBirdGames/bird_downflap.png';
+  static const String flappyBirdGamesBirdMidflap =
+      'assets/images/flappyBirdGames/bird_midflap.png';
+  static const String flappyBirdGamesBirdUpflap =
+      'assets/images/flappyBirdGames/bird_upflap.png';
+  static const String flappyBirdGamesClouds =
+      'assets/images/flappyBirdGames/clouds.png';
+  static const String flappyBirdGamesGameover =
+      'assets/images/flappyBirdGames/gameover.png';
+  static const String flappyBirdGamesGround =
+      'assets/images/flappyBirdGames/ground.png';
+  static const String flappyBirdGamesGround2 =
+      'assets/images/flappyBirdGames/ground2.png';
+  static const String flappyBirdGamesMenu =
+      'assets/images/flappyBirdGames/menu.jpg';
+  static const String flappyBirdGamesMessage =
+      'assets/images/flappyBirdGames/message.png';
+  static const String flappyBirdGamesPipe =
+      'assets/images/flappyBirdGames/pipe.png';
+  static const String flappyBirdGamesPipeRotated =
+      'assets/images/flappyBirdGames/pipe_rotated.png';
+  static const String fontsInsanibc = 'assets/fonts/Insanibc.ttf';
+  static const String fontsInsanibu = 'assets/fonts/Insanibu.ttf';
+  static const String fontsSoftMarshmallow =
+      'assets/fonts/Soft Marshmallow.otf';
+  static const String iconsFlutter = 'assets/icons/flutter.png';
+  static const String iconsFruitCuttingLogo =
+      'assets/icons/fruit_cutting_logo.png';
+  static const String imagesApple = 'assets/images/apple.png';
+  static const String imagesBackground = 'assets/images/background.png';
+  static const String imagesBanana = 'assets/images/banana.png';
+  static const String imagesBomb = 'assets/images/bomb.png';
+  static const String imagesCherry = 'assets/images/cherry.png';
+  static const String imagesFlame = 'assets/images/flame.png';
   static const String imagesFlappy = 'assets/images/flappy.png';
-  static const String imagesFlappyBirdGamesGameover = 'assets/images/flappyBirdGames/gameover.png';
-  static const String imagesFlappyBirdGamesGround2 = 'assets/images/flappyBirdGames/ground2.png';
-  static const String imagesFlappyBirdGamesMenu = 'assets/images/flappyBirdGames/menu.jpg';
-  static const String imagesFlappyBirdGamesMessage = 'assets/images/flappyBirdGames/message.png';
+  static const String imagesFlappyBirdGamesGameover =
+      'assets/images/flappyBirdGames/gameover.png';
+  static const String imagesFlappyBirdGamesGround2 =
+      'assets/images/flappyBirdGames/ground2.png';
+  static const String imagesFlappyBirdGamesMenu =
+      'assets/images/flappyBirdGames/menu.jpg';
+  static const String imagesFlappyBirdGamesMessage =
+      'assets/images/flappyBirdGames/message.png';
+  static const String imagesFlutter = 'assets/images/flutter.png';
+  static const String imagesKiwi = 'assets/images/kiwi.png';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesMainMenuButton = 'assets/images/mainMenuButton.png';
   static const String imagesMenu = 'assets/images/menu.png';
   static const String imagesMistiCloud = 'assets/images/MistiCloud.png';
+  static const String imagesOrange = 'assets/images/orange.png';
+  static const String imagesPeach = 'assets/images/peach.png';
   static const String imagesPillow = 'assets/images/Pillow.png';
+  static const String imagesPineapple = 'assets/images/pineapple.png';
   static const String imagesSuperjump = 'assets/images/superjump.png';
-  static const String lamaBirdDownflap = 'assets/images/flappyBirdGames/lama/bird_downflap.png';
-  static const String lamaBirdMidflap = 'assets/images/flappyBirdGames/lama/bird_midflap.png';
-  static const String lamaBirdUpflap = 'assets/images/flappyBirdGames/lama/bird_upflap.png';
-
+  static const String imagesWatermelon = 'assets/images/watermelon.png';
+  static const String lamaBirdDownflap =
+      'assets/images/flappyBirdGames/lama/bird_downflap.png';
+  static const String lamaBirdMidflap =
+      'assets/images/flappyBirdGames/lama/bird_midflap.png';
+  static const String lamaBirdUpflap =
+      'assets/images/flappyBirdGames/lama/bird_upflap.png';
+  static const String musicAylexOffRoad =
+      'assets/audio/music/Aylex-Off-Road.ogg';
+  static const String sfxBushCut = 'assets/audio/sfx/bush-cut.mp3';
+  static const String sfxSwordCutType = 'assets/audio/sfx/sword-cut-type.mp3';
 }
