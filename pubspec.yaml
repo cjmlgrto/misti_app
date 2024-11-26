@@ -17,6 +17,7 @@ dependencies:
   intl: ^0.20.0
   path_provider: ^2.1.5
   flame_audio: ^2.10.6
+  shared_preferences: ^2.3.3
 
 
 dev_dependencies:
@@ -41,3 +42,6 @@ flutter:
     - assets/images/flappyBirdGames/gameover.png
     - assets/audio/music/
     - assets/audio/sfx/
+    - assets/images/tutorial1.png
+    - assets/images/tutorial2.png
+    - assets/images/tutorial3.png
